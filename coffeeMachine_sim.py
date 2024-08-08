@@ -75,8 +75,10 @@ def coffeeMachine():
         if coffee in menu:
             print()
             print(coffee.upper())
-            for key, value in menu[coffee].items():#create a key value pair
-                print(f'{key}: {value}')# prints the key value of the dictionary
+            print(f'water: {menu[coffee]["water"]}ml')# prints the key value of the dictionary
+            print(f'coffee: {menu[coffee]["coffee"]}g')
+            print(f'milk: {menu[coffee]["milk"]}ml')
+            print(f'cost: ${menu[coffee]["cost"]}')
             print()
             if menu[coffee]['water'] < resource['water']: #checks if any resource avaliable
                 if menu[coffee]['coffee'] < resource['coffee']:#runs if first code runs
@@ -136,7 +138,7 @@ def coffeeMachine():
             print()
             print(f"Your change: ${round(sum_paid-menu[coffee]['cost'], 2)}")# prints out change
             print()
-            re_order = input("Do you want to re-order? :")
+            re_order = input("Do you want to re-orer? :")
             match re_order:
                 case 'yes':
                     order()
