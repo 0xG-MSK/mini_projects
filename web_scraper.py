@@ -65,7 +65,7 @@ match open_site:
         pass
     case 'n':
         pass
-#wb.open_new(hyperL) #opens the site after retrieving data
+wb.open_new(hyperL) #opens the site after retrieving data
 """
 ```
 
