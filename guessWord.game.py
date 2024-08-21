@@ -5,7 +5,7 @@ import words
 
 lives = 6
 lives_img = ['❤️','❤️','❤️','❤️','❤️','❤️']
-print('.'.join(lives_img))
+print('.'.join(lives_img))# prints out the hearts
 random_word = random.choice(words.gwords)
 print()
 #how to play
@@ -18,7 +18,7 @@ def how_to_play():
 #display
 display = []
 for _ in random_word:
-    display += '_'
+    display += '_'# prints out the spaces of hidden letters
 print(" ".join(display))
 #description
 print()
@@ -33,18 +33,18 @@ while not end:
     print()
     user_input = input(' Guess a letter: ')       
     for r in range(len(random_word)):
-        letter = random_word[r]
-        if letter == user_input:
-            display[r] = letter
+        letter = random_word[r]# assigns the the current index of r to var letter
+        if letter == user_input: #checks if the letter is same as var user_input 
+            display[r] = letter# replaces empty '_' with the guessed letter
     if user_input not in random_word:
         print()
         lives -= 1
         lives_img.remove('❤️')
-        lives_img.append('💔')
+        lives_img.append('💔')#removes the heart and replaces with broken heart 
         print(f'You lost a heart 💔')
         print(".".join(lives_img))
         if lives == 0:
-            end = True
+            end = True # ends game loop
             print()
             print("PLAYER DIED 💀")
             print(f"The word was: {random_word}")
